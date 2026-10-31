@@ -19,7 +19,7 @@ Experiments in C++ multithreading and synchronization, OpenMP scheduling, and CU
 
 ### CPU Scheduling Simulator
 
-A C11 event-driven simulator for FCFS, SJF, SRTF, and Round Robin, with process arrivals, preemption, context-switch overhead, CPU idle time, Gantt timelines, and scheduling metrics. A 116-case workload study examines convoy effects, dispatch-cost tradeoffs, long-job progress, and starvation risk. Its finite synthetic workloads illustrate policy tradeoffs; they do not prove infinite starvation or identify a universally best scheduler.
+A C11 event-driven simulator for FCFS, SJF, SRTF, and Round Robin, with process arrivals, preemption, context-switch overhead, CPU idle time, Gantt timelines, and scheduling metrics. A 116-case workload study examines convoy effects, dispatch-cost tradeoffs, long-job progress, and starvation risk. In a finite H=64 short-job prefix, SJF/SRTF leave the long job unserved for 64 ticks while Round Robin provides 14 ticks before the prefix ends; all jobs later complete. In a separate mixed workload with switch cost 1, RR q=1 averages response 6 with 51.14% utilization, while q=8 averages response 16.5 with 83.33% utilization. These synthetic cases illustrate tradeoffs, not infinite-arrival starvation or a universally best scheduler.
 
 ### Java Socket Chat
 
