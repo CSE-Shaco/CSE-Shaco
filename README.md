@@ -15,7 +15,7 @@ I enjoy understanding how software works under the hood—from concurrency and m
 
 ### Parallel Computing Lab
 
-Experiments in C++ multithreading and synchronization, OpenMP scheduling, and CUDA kernel optimization. The CUDA code computes the uncentered second-moment matrix `XᵀX/m`; GPU execution and performance measurements are still pending validation.
+Experiments in C++ multithreading and synchronization, OpenMP scheduling, and CUDA kernel optimization. The CUDA kernels compute the uncentered second-moment matrix `XᵀX/m`. A recorded RTX 4060 WSL2 run passed correctness and Compute Sanitizer checks; a shared-memory tiled kernel reduced median kernel time by 3.6% on the largest tested shape, with mixed results on smaller shapes. Measurements cover kernel time only.
 
 ### CPU Scheduling Simulator
 
