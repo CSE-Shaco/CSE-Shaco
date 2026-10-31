@@ -61,4 +61,4 @@ I'm developing and validating experiments in parallel computing and systems prog
 
 ## 🧩 Problem Solving
 
-[![solved.ac — kingjeongmin](https://img.shields.io/badge/solved.ac-kingjeongmin-17CE3A?style=flat-square)](https://solved.ac/kingjeongmin) [Baekjoon Online Judge](https://www.acmicpc.net/user/kingjeongmin)
+[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kingjeongmin)](https://solved.ac/kingjeongmin) [Baekjoon Online Judge](https://www.acmicpc.net/user/kingjeongmin)
