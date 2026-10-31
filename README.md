@@ -15,7 +15,7 @@ I enjoy understanding how software works under the hood—from concurrency and m
 
 ### Parallel Computing Lab
 
-Experiments in C++ multithreading and synchronization, OpenMP scheduling, and CUDA kernel optimization. The CUDA kernels compute the uncentered second-moment matrix `XᵀX/m`. A recorded RTX 4060 WSL2 run passed correctness and Compute Sanitizer checks; a shared-memory tiled kernel reduced median kernel time by 3.6% on the largest tested shape, with mixed results on smaller shapes. Measurements cover kernel time only.
+Experiments in C++ multithreading and synchronization, OpenMP scheduling, and CUDA kernel optimization. The CUDA kernels compute the uncentered second-moment matrix `XᵀX/m`. In a recorded RTX 4060 WSL2 run, four kernels were compared across four shapes with 40 samples per variant and shape. All four passed correctness checks on 12 shapes and Compute Sanitizer memcheck/racecheck. The register-tiled variant reduced median kernel time by 28.83% on the 1024×512 shape, while it was 66.32% slower on the smallest shape; the coalesced-only variant was slower on all four tested shapes. These are single-session kernel-only results: transfers were excluded and clock/thermal conditions were uncontrolled.
 
 ### CPU Scheduling Simulator
 
