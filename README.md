@@ -13,15 +13,15 @@ I enjoy understanding how software works under the hood—from concurrency and m
 
 ## 🛠 Selected Work
 
-### Parallel Computing Lab
+### [Parallel Computing Lab](https://github.com/CSE-Shaco/parallel-computing-lab)
 
 Experiments in C++ multithreading and synchronization, OpenMP scheduling, and CUDA kernel optimization. The CUDA kernels compute the uncentered second-moment matrix `XᵀX/m`. Five consecutive fresh-process sweeps on an RTX 4060 under WSL2 compared four kernels across four shapes (40 samples per variant and shape in each run). All runs passed correctness checks on 12 shapes and Compute Sanitizer memcheck/racecheck. Across the five paired runs, register-tiled reached 1.39–1.41× the baseline median kernel speed on 1024×512 (median ratio 1.406×); results varied by shape, and the smallest shape regressed. The coalesced-only variant was slower in all 20 shape/run comparisons. These exploratory measurements cover kernel time only, exclude transfers, and were collected on one host/day without controlled clock or thermal conditions.
 
-### CPU Scheduling Simulator
+### [CPU Scheduling Simulator](https://github.com/CSE-Shaco/cpu-scheduling-simulator)
 
 A C11 event-driven simulator for FCFS, SJF, SRTF, and Round Robin, with process arrivals, preemption, context-switch overhead, CPU idle time, Gantt timelines, and scheduling metrics. A 116-case study across 14 synthetic, single-CPU workloads compares convoy behavior, dispatch-cost tradeoffs, long-job progress, and starvation risk. With finite arrivals, SJF/SRTF delay the long job through a 64-tick short-job prefix while Round Robin provides 14 service ticks; all modeled jobs finish. In a separate mixed case with switch cost 1, RR q=1 averages response 6 with 51.14% utilization, while q=8 averages response 16.5 with 83.33% utilization. These simulated examples illustrate tradeoffs; they do not prove starvation under infinite arrivals or name a universal best scheduler.
 
-### Java Socket Chat
+### [Java Socket Chat](https://github.com/CSE-Shaco/java-socket-chat)
 
 A Java 21 TCP client-server chat application with a Swing interface, multithreaded session handling, a shared message protocol, file transfer, and automated tests.
 
