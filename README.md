@@ -1,64 +1,78 @@
-# Hi, I'm Jeongmin Kim 👋
+# Jeongmin Kim 👋
 
-I'm a Computer Engineering undergraduate at Inha University interested in systems software, parallel computing, developer tools, and full-stack engineering.
+**Computer Engineering undergraduate at Inha University**  
+Interested in **GPU & parallel computing, systems software, developer tools, and full-stack engineering**.
 
-I enjoy understanding how software works under the hood—from concurrency and memory to operating systems and performance—while building applications people can use.
+I like understanding how software behaves—from concurrency and memory access to operating-system scheduling—and turning that understanding into software that can be tested, measured, and used.
 
-## 🔍 Engineering Interests
-
-- **Systems and parallel computing:** C/C++, multithreading, synchronization, OpenMP, CUDA, and performance analysis
-- **Backend and infrastructure:** APIs, databases, Linux, deployment, and reliability
-- **Frontend and mobile:** web applications and React Native/Expo
-- **Developer tools:** native integrations, automation, and practical tooling
-
-## 🛠 Selected Work
+## 🔬 Systems & Parallel Computing
 
 ### [Parallel Computing Lab](https://github.com/CSE-Shaco/parallel-computing-lab)
+**C++11 · OpenMP · CUDA C++ · CMake**
 
-Experiments in C++ multithreading and synchronization, OpenMP scheduling, and CUDA kernel optimization. The CUDA kernels compute the uncentered second-moment matrix `XᵀX/m`. Five consecutive fresh-process sweeps on an RTX 4060 under WSL2 compared four kernels across four shapes (40 samples per variant and shape in each run). All runs passed correctness checks on 12 shapes and Compute Sanitizer memcheck/racecheck. Across the five paired runs, register-tiled reached 1.39–1.41× the baseline median kernel speed on 1024×512 (median ratio 1.406×); results varied by shape, and the smallest shape regressed. The coalesced-only variant was slower in all 20 shape/run comparisons. These exploratory measurements cover kernel time only, exclude transfers, and were collected on one host/day without controlled clock or thermal conditions.
+- Compared thread-local counters and mutex synchronization, and evaluated OpenMP scheduling policies under balanced and imbalanced workloads.
+- Implemented four CUDA kernels for the uncentered second-moment matrix `XᵀX/m`: direct, shared-memory tiled, coalesced-load tiled, and register-tiled.
+- Validated GPU correctness and memory access with CPU references and Compute Sanitizer on an RTX 4060. Across five same-host sweeps, the register-tiled kernel achieved a **1.406× median paired kernel-time speedup** at 1024×512; results varied by shape and exclude data transfers.
+
+[Code & reproducible measurements](https://github.com/CSE-Shaco/parallel-computing-lab) · [CUDA methodology](https://github.com/CSE-Shaco/parallel-computing-lab/blob/main/cuda-kernel-optimization/docs/methodology.md)
 
 ### [CPU Scheduling Simulator](https://github.com/CSE-Shaco/cpu-scheduling-simulator)
+**C11 · Event-driven simulation · Automated testing**
 
-A C11 event-driven simulator for FCFS, SJF, SRTF, and Round Robin, with process arrivals, preemption, context-switch overhead, CPU idle time, Gantt timelines, and scheduling metrics. A 116-case study across 14 synthetic, single-CPU workloads compares convoy behavior, dispatch-cost tradeoffs, long-job progress, and starvation risk. With finite arrivals, SJF/SRTF delay the long job through a 64-tick short-job prefix while Round Robin provides 14 service ticks; all modeled jobs finish. In a separate mixed case with switch cost 1, RR q=1 averages response 6 with 51.14% utilization, while q=8 averages response 16.5 with 83.33% utilization. These simulated examples illustrate tradeoffs; they do not prove starvation under infinite arrivals or name a universal best scheduler.
+- Implemented **FCFS, SJF, SRTF, and Round Robin** with arrivals, preemption, context-switch costs, and Gantt timelines.
+- Validated scheduling behavior against independent reference calculations and sanitizers.
+- Recorded a **116-case** simulation study exploring waiting time, response time, dispatch overhead, and fairness tradeoffs. These are simulated outcomes, not operating-system benchmarks.
+
+[Code & scheduling analysis](https://github.com/CSE-Shaco/cpu-scheduling-simulator)
 
 ### [Java Socket Chat](https://github.com/CSE-Shaco/java-socket-chat)
+**Java 21 · TCP · Swing · Maven**
 
-A Java 21 TCP client-server chat application with a Swing interface, multithreaded session handling, a shared message protocol, file transfer, and automated tests.
+- Client-server chat application featuring multithreaded sessions, chat rooms, file transfer, and separate TCP channels.
+- Includes protocol validation, bounded outbound queues, and **38 unit tests + 18 real TCP integration tests**.
 
-## Other Software Engineering Work
+[Code & architecture](https://github.com/CSE-Shaco/java-socket-chat) · [CI checks](https://github.com/CSE-Shaco/java-socket-chat/actions/workflows/ci.yml)
 
-### Figma PDF Exporter Font Service
+## 🚀 Developer Tools & Full-Stack Projects
 
-A local service that lets a Figma PDF export plugin access fonts available through Figma Desktop.
+### [Figma PDF Exporter Font Service](https://github.com/CSE-Shaco/figma-pdf-exporter-helper)
+**Objective-C · Go · Native OS APIs**
 
-- macOS service built with Objective-C, Foundation, libcurl, and launchd
-- Windows service built with Go, including per-user lifecycle management
-- Local API validation, installation tooling, build scripts, and automated tests
+A local relay that helps a Figma PDF export plugin retrieve fonts exposed by Figma Desktop.
 
-### GDGoC INHA Website · Backend and Frontend Contributions
+- **macOS:** Objective-C, Foundation, libcurl, and launchd.
+- **Windows:** Go, per-user service management, and architecture-specific packaging.
+- API validation, local-only access restrictions, install/uninstall scripts, and automated tests.
 
-Contributed to a student developer community platform built with Next.js, Spring Boot, PostgreSQL, and AWS-related tooling.
+[Source code](https://github.com/CSE-Shaco/figma-pdf-exporter-helper) · [Releases](https://github.com/CSE-Shaco/figma-pdf-exporter-helper/releases)
 
-- Implemented presigned file upload support and major-code normalization/migration in the backend
-- Built the attendance dashboard and onboarding landing page in the frontend
+### GDGoC INHA Community Platform
+**Next.js · Spring Boot · PostgreSQL · AWS**
 
-## 💻 Technical Toolkit
+Contributed to the community website and backend as part of a team, including:
+
+- [Presigned file uploads — backend](https://github.com/GDGoCINHA/24-2_GDGoC_Server/pull/327)
+- [Major-code normalization & migration — backend](https://github.com/GDGoCINHA/24-2_GDGoC_Server/pull/325)
+- [Attendance dashboard — frontend](https://github.com/GDGoCINHA/24-2_GDGoC_Web/pull/325)
+- [Onboarding landing page — frontend](https://github.com/GDGoCINHA/24-2_GDGoC_Web/pull/333)
+
+[Frontend repository](https://github.com/GDGoCINHA/24-2_GDGoC_Web) · [Backend repository](https://github.com/GDGoCINHA/24-2_GDGoC_Server)
+
+## 🧰 Technical Toolkit
 
 | Area | Technologies |
 | --- | --- |
-| Systems and parallel | C, C++, OpenMP, CUDA, Linux |
-| Backend | Java, Spring Boot, PostgreSQL, Redis, Python |
-| Frontend and mobile | TypeScript, React, Next.js, React Native, Expo |
-| Infrastructure and tooling | Git, Docker, AWS EC2, Nginx, GitHub Actions |
-| Native development | Objective-C, Foundation, Go, libcurl |
+| **Systems & parallel** | C, C++, CUDA, OpenMP, Linux |
+| **Backend** | Java, Spring Boot, PostgreSQL, Redis, Python |
+| **Frontend & mobile** | TypeScript, React, Next.js, React Native, Expo |
+| **Infrastructure** | Git, Docker, AWS EC2, Nginx, GitHub Actions |
+| **Native tooling** | Objective-C, Go, Foundation, libcurl |
 
-## 🤝 Leadership and Learning
+## 🤝 Leadership & Education
 
-- Technical Lead at GDGoC INHA, supporting collaborative development, mentoring, and technical coordination
-- Relevant coursework: Parallel Programming, Operating Systems, Computer Architecture, Algorithms, Computer Networks, and Data Structures
-
-I'm developing and validating experiments in parallel computing and systems programming. I'll link projects here as their code and results are ready for public review.
+- **Technical Lead, GDGoC INHA** — collaborative software development, mentoring, and technical coordination.
+- **Computer Engineering, Inha University** — coursework in Parallel Programming, Operating Systems, Computer Architecture, Algorithms, Computer Networks, and Data Structures.
 
 ## 🧩 Problem Solving
 
-[![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kingjeongmin)](https://solved.ac/kingjeongmin)
+[![Solved.ac Profile](https://mazassumnida.wtf/api/v2/generate_badge?boj=kingjeongmin)](https://solved.ac/kingjeongmin)
